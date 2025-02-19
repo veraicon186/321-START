@@ -1,0 +1,146 @@
+html { box-sizing: border-box; }
+*, ::before, ::after { box-sizing: inherit; }
+
+
+:root {
+    /* Primární barva - tmavě modrá */
+    --primary-color: #2B2F85;
+    --primary-color-rgb: 43, 47, 133;
+
+    /* Sekundární barva - červená */
+    --secondary-color: #EC1C24;
+    --secondary-color-rgb: 236, 28, 36;
+
+    /* Terciární barva - tmavě šedá */
+    --third-color: #8B8B8B;
+    --third-color-rgb: 139, 139, 139;
+}
+
+
+body { 
+    font-family:'Quicksand', sans-serif;
+    
+}
+
+.main { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin: 40px 0 0 0;
+    text-align: center;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: 600;
+
+ }
+
+
+ p {
+    color: var(--primary-color);
+  }
+
+
+.info-button {
+    border-radius: 20px;
+    box-shadow: 0 4px 6px 2px rgba(82, 127, 255, 0.15);
+    padding: 0px 10px;
+    max-width: 500px;
+    margin: 10px;
+   
+}
+ 
+   
+.video {
+    max-width: 100%;
+    height: auto; 
+}
+
+
+ #myVideo {
+    cursor: pointer;
+    }
+
+#myVideo2 {
+    margin: 0 0 50px 0;
+}   
+
+
+.toggle-header {
+    cursor: pointer;
+    margin: 10px;
+    color: var(--primary-color);
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+    transition: color 0.3s ease-in-out;
+}
+
+.toggle-header.active {
+    color: var(--secondary-color);
+}
+
+
+/* Skrytí obsahu při výchozím stavu */
+.toggle-content {
+    height: 0; /* Skrytý stav */
+    opacity: 0; /* Skrytí obsahu */
+    overflow: hidden; /* Skrytí přetékajícího obsahu */
+    transform: translateY(-5px); /* Počáteční pozice je 20px nad nadpisem */
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out, height 0s ease; /* Plynulý přechod pro transform, opacity a height */
+    padding: 0; /* Padding pro zobrazený obsah */
+    font-size: 1em;
+}
+
+
+
+.toggle-content p {
+    margin: 10px;
+}
+
+.web-link {
+    margin: 10px;
+    color: var(--secondary-color);
+
+}
+
+.contact-box {
+    margin: 50px 10px;
+}
+
+.contact-content {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Pro zobrazení při rozbalení nastavíme transformaci a viditelnost */
+.toggle-content.show {
+    height: auto; /* Nastavíme auto pro správné zobrazení výšky */
+    opacity: 1; /* Zobrazíme obsah */
+    transform: translateY(0); /* Text se posune zpět na původní místo */
+    padding: 0 0 20px 0; /* Padding pro zobrazený obsah */
+}
+
+span { 
+    color: var(--secondary-color);
+}
+
+footer{
+    text-align: center;
+    color: var(--third-color);
+    font-size: 0.7em;
+}
+
+@media screen and (max-width: 640px) {}
+
+@media screen and (max-width: 960px) {}

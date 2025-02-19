@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>321 START</title>
+
+	
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+
+
+	<link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+	<div class="wrapper">
+
+		<header class="header">
+
+
+     	
+		</header>
+
+		<main class="main">
+
+            <h1>Nastartuj svoji hvězdnou kariéru</h1>
+
+            <video id="myVideo" class="video" muted playsinline autoplay preload="auto">
+                <source src="/321start_logo_web.mp4" type="video/mp4">
+              </video>
+
+
+            <h1>Zvyš svůj kredit</h1>
+
+           
+
+
+            <h1>Přímým letem na&nbsp;Taiwan</h1>
+
+            <video id="myVideo2" class="video" muted playsinline autoplay loop preload="auto">
+                <source src="/321start_explainer_web1.mp4" type="video/mp4">
+            </video>
+       
+
+        <div class="info-button"> 
+            <h2 id="bonus-program-title" class="toggle-header">Bonusový program</h2>
+            <div class="toggle-content">
+                <p>Využij speciální příležitost navštívit moderní a exotický Taiwan.
+                Neztrácej čas, začni budovat svoji hvězdnou kariéru v modelingu s pomocí těch nejlepších profesionálů.</p>
+
+
+                <p>Exkluzivní spolupráce scoutingové společnosti PMST Praha a modelingové agentury NEW FACE Taipei vyústila v roce 2025 ke vzniku tohoto projektu. 
+                Nyní každý rok získají skvělou šanci nastartovat svoji hvězdnou kariéru 3 dívky a 1 kluk.
+                Jedinečný projekt 2 zemí, České republiky a Taiwanu, právě startuje.</p>
+            </div>
+        </div>
+
+        <div class="info-button"> 
+            <h2 id="cooperation-title" class="toggle-header">20 let spolupráce</h2>
+            <div class="toggle-content">
+                <p>Exkluzivní spolupráce scoutingové společnosti PMST Praha a modelingové agentury NEW FACE Taipei vyústila v roce 2025 ke vzniku tohoto projektu.</p>
+                <p>Nyní každý rok získají skvělou šanci nastartovat svoji hvězdnou kariéru 3 dívky a 1 kluk.</p>
+                <p>Jedinečný projekt 2 zemí, České republiky a Taiwanu, právě startuje.</p>
+                <a class="web-link" href="https://www.pmst.cz">PMST</a> 
+            </div>   
+        </div>
+
+        <div class="info-button"> 
+            <h2 id="success-title" class="toggle-header">40 let úspěchů</h2>
+            <div class="toggle-content">
+                <p>NEW FACE model management byl založen v roce 1985. Řadí se mezi nejstabilnější a nejdéle působící modelingové agentury na světě.</p>
+                <p>Nespočet hvězd a hvězdiček modelingu objevil a jejich kariéru pomohl nastartovat tým profesionálů z NEW FACE. Tato modelingová agentura za dobu 40ti let své existence inspirovala vznik mnoha modelingových společností po celém světě, které následně aplikovaly procesní systémy managementu NEW FACE.</p>
+                <p>I ty teď můžeš být mezi prvními a profíky.</p>
+                <p>321<span>STAR</span>T</p>
+                <a class="web-link" href="https://www.newfacemodelmanagement.com">NEW FACE</a>
+            </div>  
+        </div>
+        
+        <div class="contact-box">
+            <p class="contact-content">Na palubu Tě zve kapitán letu</p>
+            <p class="contact-content">Patrik Hořelica / scouting director PMST ČR</p>
+            <p class="contact-content">Tel: 736 640 908  patrik@pmst.cz</p>
+        </div> 
+
+		</main>
+
+
+		<footer class="footer">
+
+			<div class="footer__copyright">
+				&copy;2025, 321*T
+			</div>
+		</footer>
+
+
+	</div>
+<script> 
+        // Přehrávání videí
+        document.addEventListener("DOMContentLoaded", function () {
+        let video1 = document.getElementById("myVideo");
+        let video2 = document.getElementById("myVideo2");
+
+        let observer1 = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                if (video1.readyState >= 3) {
+                video1.play();
+                } else {
+                video1.addEventListener("canplaythrough", () => video1.play(), { once: true });
+                }
+            } else {
+                video1.pause();
+            }
+            });
+        }, { threshold: 0.5 });
+
+        let observer2 = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                if (video2.readyState >= 3) {
+                video2.play();
+                } else {
+                video2.addEventListener("canplaythrough", () => video2.play(), { once: true });
+                }
+            }
+            });
+        }, { threshold: 0.5 });
+
+        observer1.observe(video1);
+        observer2.observe(video2);
+
+        // Přidání funkce pro restart videa po kliknutí
+        video1.addEventListener("click", function () {
+            video1.currentTime = 0; // Nastaví čas na začátek
+            video1.play(); // Spustí video znovu
+        });
+        });
+
+
+
+        
+// Funkce pro přepínání viditelnosti obsahu (zobrazení pouze jednoho divu s animací)
+document.querySelectorAll('.toggle-header').forEach(function(header) {
+    header.addEventListener("click", function() {
+        // Získání všech obsahových divů
+        var allContents = document.querySelectorAll('.toggle-content');
+        var allHeaders = document.querySelectorAll('.toggle-header');
+
+        // Skrytí všech ostatních obsahů a odebrání aktivní třídy z nadpisů
+        allContents.forEach(function(content, index) {
+            if (content !== header.nextElementSibling) {
+                content.classList.remove('show');
+                allHeaders[index].classList.remove('active'); // Odebere barvu z nadpisu
+            }
+        });
+
+        // Přepnutí zobrazení pro aktuálně kliknutý obsah
+        var currentContent = header.nextElementSibling;
+        currentContent.classList.toggle('show'); // Přepnutí třídy 'show'
+        header.classList.toggle('active'); // Přepnutí aktivní třídy na nadpis
+    });
+});
+
+
+
+
+
+
+
+
+ 
+ </script>
+      
+
+
+</body>
+</html>
