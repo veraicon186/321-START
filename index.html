@@ -366,13 +366,25 @@ document.addEventListener('click', function(e) {
       showControls();
     }
 
-    function updatePlayIcons(){
-      centerPlay.innerHTML = video.paused ? svgPlay : svgPause;
-      if(playBtn) playBtn.innerHTML = video.paused ? svgPlay : svgPause;
-    }
+   function updatePlayIcons(){
+  if(video.paused){
+    centerPlay.innerHTML = svgPlay;
+    player.classList.remove("playing");
+  } else {
+    centerPlay.innerHTML = svgPause;
+    player.classList.add("playing");
+  }
+
+  if(playBtn){
+    playBtn.innerHTML = video.paused ? svgPlay : svgPause;
+  }
+}
 
     // === INIT icons
     updatePlayIcons();
+    video.addEventListener("play", updatePlayIcons);
+video.addEventListener("pause", updatePlayIcons);
+
 
     // Click events
     centerPlay.addEventListener("click", e=>{
@@ -452,10 +464,6 @@ document.addEventListener('click', function(e) {
       showControls();
     },{passive:false, once:true});
 
-    // Center play visibility
-    player.classList.add("show-controls");
-    video.addEventListener("play", ()=>centerPlay.style.opacity=0);
-    video.addEventListener("pause", ()=>centerPlay.style.opacity=1);
 
   });
 });

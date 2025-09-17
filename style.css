@@ -210,6 +210,20 @@ footer{
     align-items: center;
     justify-content: center;
     color: white;
+     pointer-events: auto;
+}
+
+.custom-video-player.playing .center-play {
+  opacity: 0; /* skryje při přehrávání */
+}
+
+.custom-video-player.playing:hover .center-play {
+  opacity: 1; /* ukáže pause při hoveru */
+}
+
+/* Když je video pauznuté, vždy ukázat play */
+.custom-video-player:not(.playing) .center-play {
+  opacity: 1;
 }
 
 /* SVG inside center play */
