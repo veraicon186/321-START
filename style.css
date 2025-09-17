@@ -217,6 +217,22 @@ footer{
   opacity: 0; /* skryje při přehrávání */
 }
 
+/* Telefony a tablety */
+@media only screen and (max-width: 1024px) {
+  .custom-video-player.playing .center-play {
+    opacity: 0 !important;      /* skryje při přehrávání */
+    transition: opacity 0.3s;   /* plynulý přechod */
+  }
+
+  /* Pokud potřebuješ, aby tlačítko bylo vidět, když video není přehráváno */
+  .custom-video-player:not(.playing) .center-play {
+    opacity: 1 !important;
+    pointer-events: auto;
+  }
+}
+
+
+
 .custom-video-player.playing:hover .center-play {
   opacity: 1; /* ukáže pause při hoveru */
 }
