@@ -5,73 +5,160 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>321 START</title>
 
-	
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
 
-
 	<link rel="stylesheet" href="style.css">
-    
 </head>
 <body>
 	<div class="wrapper">
 
-		<header class="header">
-
-
-     	
-		</header>
+		<header class="header"></header>
 
 		<main class="main">
 
             <h1>Nastartuj svoji hvězdnou kariéru</h1>
 
+            <!-- Původní video - BEZ ZMĚNY -->
             <video id="myVideo" class="video" muted playsinline autoplay preload="auto">
                 <source src="/321start_logo_web.mp4" type="video/mp4">
-              </video>
-
+            </video>
 
             <h1>Zvyš svůj kredit</h1>
+            <h1>Přímým letem na&nbsp;<span class="highlight">Taiwan</span></h1>
 
-           
-
-
-            <h1>Přímým letem na&nbsp;Taiwan</h1>
-
+            <!-- Původní video - BEZ ZMĚNY -->
             <video id="myVideo2" class="video" muted playsinline autoplay loop preload="auto">
                 <source src="/321start_explainer_web1.mp4" type="video/mp4">
             </video>
        
-
+        <!-- NOVÉ VIDEO 1 -->
         <div class="info-button"> 
             <h2 id="bonus-program-title" class="toggle-header">Bonusový program</h2>
-            
-        <div class="toggle-content">
-           
-                <p>Využij speciální příležitost navštívit moderní a exotický Taiwan.
-                Neztrácej čas, začni budovat svoji hvězdnou kariéru v modelingu s pomocí těch nejlepších profesionálů.</p>
+            <div class="toggle-content">
+                
+                <div class="custom-video-player">
+                    <video id="321_video_1" playsinline preload="metadata" poster="poster_321_video_1_2.jpg">
+                        <source src="321_START_video_1.webm" type="video/webm">
+                        <source src="321_START_video_1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="controls">
+                        <button class="play-pause"> 
+                            <!-- Ikona pro Play -->
+                            <svg class="icon-play" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8 5v14l11-7z"></path>
+                            </svg>
+
+                            <!-- Ikona pro Pause -->
+                            <svg class="icon-pause" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg" style="display:none;">
+                                <rect x="6" y="5" width="4" height="14"></rect>
+                                <rect x="14" y="5" width="4" height="14"></rect>
+                            </svg>
+                        </button>
+
+                        <div class="progress-container"><div class="progress-bar"></div></div>
+                            <button class="mute-unmute">
+                                <!-- Ikona pro Unmute (reproduktor bez křížku) -->
+                                <svg class="icon-unmute" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="white">
+                                    <polygon points="5,9 9,9 13,5 13,19 9,15 5,15"/>
+                                </svg>
+
+                                <!-- Ikona pro Mute (reproduktor s křížkem) -->
+                                <svg class="icon-mute" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="white" style="display:none;">
+                                    <polygon points="5,9 9,9 13,5 13,19 9,15 5,15"/>
+                                    <line x1="16" y1="8" x2="20" y2="16" stroke="white" stroke-width="2"/>
+                                    <line x1="20" y1="8" x2="16" y2="16" stroke="white" stroke-width="2"/>
+                                </svg>
+                            </button>
 
 
-            </div>
+                            <button class="fullscreen">⛶</button>
+                        </div>
+                    </div>
+                    <p>Využij speciální příležitost navštívit moderní a exotický Taiwan.
+                        Neztrácej čas, začni budovat svoji hvězdnou kariéru v modelingu s pomocí těch nejlepších profesionálů.</p>
+
+                    <p>Exkluzivní spolupráce scoutingové společnosti PMST Praha a modelingové agentury NEW FACE Taipei vyústila v roce 2025 ke vzniku tohoto projektu. 
+                        Nyní každý rok získají skvělou šanci nastartovat svoji hvězdnou kariéru 3 dívky a 1 kluk.
+                        Jedinečný projekt 2 zemí, České republiky a Taiwanu, právě startuje.</p>
+                </div>
         </div>
 
+        <!-- NOVÉ VIDEO 2 -->
         <div class="info-button"> 
             <h2 id="cooperation-title" class="toggle-header">20 let spolupráce</h2>
             <div class="toggle-content">
 
-                <p>Exkluzivní spolupráce scoutingové společnosti PMST Praha a modelingové agentury NEW FACE Taipei vyústila v roce 2025 ke vzniku tohoto projektu.</p>
+                <div class="custom-video-player">
+                     
+                    <video id="321_video_2" playsinline preload="metadata" poster="poster_321_video_2_2.jpg">
+                        <source src="321_START_video_2.webm" type="video/webm">
+                        <source src="321_START_video_2.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="controls">
+                        <button class="play-pause">▶</button>
+                        <div class="progress-container"><div class="progress-bar"></div></div>
+                        <button class="mute-unmute">
+                            <!-- Ikona pro Unmute (reproduktor bez křížku) -->
+                            <svg class="icon-unmute" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="white">
+                                <polygon points="5,9 9,9 13,5 13,19 9,15 5,15"/>
+                            </svg>
+
+                            <!-- Ikona pro Mute (reproduktor s křížkem) -->
+                            <svg class="icon-mute" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="white" style="display:none;">
+                                <polygon points="5,9 9,9 13,5 13,19 9,15 5,15"/>
+                                <line x1="16" y1="8" x2="20" y2="16" stroke="white" stroke-width="2"/>
+                                <line x1="20" y1="8" x2="16" y2="16" stroke="white" stroke-width="2"/>
+                            </svg>
+                        </button>
+
+                        <button class="fullscreen">⛶</button>
+                    </div>
+                </div>
+                 <p>Exkluzivní spolupráce scoutingové společnosti PMST Praha a modelingové agentury NEW FACE Taipei vyústila v roce 2025 ke vzniku tohoto projektu.</p>
                 <p>Nyní každý rok získají skvělou šanci nastartovat svoji hvězdnou kariéru 3 dívky a 1 kluk.</p>
                 <p>Jedinečný projekt 2 zemí, České republiky a Taiwanu, právě startuje.</p>
                 <a class="web-link" href="https://www.pmst.cz">PMST</a> 
+               
             </div>   
         </div>
 
+        <!-- NOVÉ VIDEO 3 -->
         <div class="info-button"> 
             <h2 id="success-title" class="toggle-header">40 let úspěchů</h2>
             <div class="toggle-content">
-                <p>NEW FACE model management byl založen v roce 1985. Řadí se mezi nejstabilnější a nejdéle působící modelingové agentury na světě.</p>
+               
+                <div class="custom-video-player">
+                    <video id="321_video_3" playsinline preload="metadata" poster="poster_321_video_3_2.jpg">
+                        <source src="321_START_video_3.webm" type="video/webm">
+                        <source src="321_START_video_3.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="controls">
+
+                        <button class="play-pause">▶</button>
+                        <div class="progress-container"><div class="progress-bar"></div></div>
+                       <button class="mute-unmute">
+                            <!-- Ikona pro Unmute (reproduktor bez křížku) -->
+                            <svg class="icon-unmute" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="white">
+                                <polygon points="5,9 9,9 13,5 13,19 9,15 5,15"/>
+                            </svg>
+
+                            <!-- Ikona pro Mute (reproduktor s křížkem) -->
+                            <svg class="icon-mute" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="white" style="display:none;">
+                                <polygon points="5,9 9,9 13,5 13,19 9,15 5,15"/>
+                                <line x1="16" y1="8" x2="20" y2="16" stroke="white" stroke-width="2"/>
+                                <line x1="20" y1="8" x2="16" y2="16" stroke="white" stroke-width="2"/>
+                            </svg>
+                        </button>
+
+                        <button class="fullscreen">⛶</button>
+                    </div>
+                </div>
+                  <p>NEW FACE model management byl založen v roce 1985. Řadí se mezi nejstabilnější a nejdéle působící modelingové agentury na světě.</p>
                 <p>Nespočet hvězd a hvězdiček modelingu objevil a jejich kariéru pomohl nastartovat tým profesionálů z NEW FACE. 40 let záviděníhodné existence zajišťuje NEW FACE neochvějnou pozici ve světě modelingu.
 Být trendsetter ve fashion industry, je umění.</p>
                 <p>I ty teď můžeš být mezi prvními a profíky.</p>
@@ -88,92 +175,296 @@ Být trendsetter ve fashion industry, je umění.</p>
 
 		</main>
 
-
 		<footer class="footer">
-
 			<div class="footer__copyright">
 				&copy;2025, 321*T
 			</div>
 		</footer>
 
-
 	</div>
-<script> 
-        // Přehrávání videí
-        document.addEventListener("DOMContentLoaded", function () {
-        let video1 = document.getElementById("myVideo");
-        let video2 = document.getElementById("myVideo2");
+<script>
 
-        let observer1 = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                if (video1.readyState >= 3) {
-                video1.play();
-                } else {
-                video1.addEventListener("canplaythrough", () => video1.play(), { once: true });
-                }
-            } else {
-                video1.pause();
-            }
-            });
-        }, { threshold: 0.5 });
+  // ======== Scroll-based přehrávání hlavních videí ========
+  const video1 = document.getElementById("myVideo");
+  const video2 = document.getElementById("myVideo2");
 
-        let observer2 = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                if (video2.readyState >= 3) {
-                video2.play();
-                } else {
-                video2.addEventListener("canplaythrough", () => video2.play(), { once: true });
-                }
-            }
-            });
-        }, { threshold: 0.5 });
-
-        observer1.observe(video1);
-        observer2.observe(video2);
-
-        // Přidání funkce pro restart videa po kliknutí
-        video1.addEventListener("click", function () {
-            video1.currentTime = 0; // Nastaví čas na začátek
-            video1.play(); // Spustí video znovu
-        });
-        });
-
-
-
-        
-// Funkce pro přepínání viditelnosti obsahu (zobrazení pouze jednoho divu s animací)
-document.querySelectorAll('.toggle-header').forEach(function(header) {
-    header.addEventListener("click", function() {
-        // Získání všech obsahových divů
-        var allContents = document.querySelectorAll('.toggle-content');
-        var allHeaders = document.querySelectorAll('.toggle-header');
-
-        // Skrytí všech ostatních obsahů a odebrání aktivní třídy z nadpisů
-        allContents.forEach(function(content, index) {
-            if (content !== header.nextElementSibling) {
-                content.classList.remove('show');
-                allHeaders[index].classList.remove('active'); // Odebere barvu z nadpisu
-            }
-        });
-
-        // Přepnutí zobrazení pro aktuálně kliknutý obsah
-        var currentContent = header.nextElementSibling;
-        currentContent.classList.toggle('show'); // Přepnutí třídy 'show'
-        header.classList.toggle('active'); // Přepnutí aktivní třídy na nadpis
+  const observer1 = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting) {
+        if(video1.readyState>=3) video1.play();
+        else video1.addEventListener("canplaythrough",()=>video1.play(),{once:true});
+      } else video1.pause();
     });
+  },{threshold:0.5});
+
+  const observer2 = new IntersectionObserver(entries => {
+    entries.forEach(entry=>{
+      if(entry.isIntersecting) {
+        if(video2.readyState>=3) video2.play();
+        else video2.addEventListener("canplaythrough",()=>video2.play(),{once:true});
+      }
+    });
+  },{threshold:0.5});
+
+  observer1.observe(video1);
+  observer2.observe(video2);
+
+  video1.addEventListener("click", ()=>{video1.currentTime=0; video1.play();});
+
+// ======== Funkce pro plynulý a pomalejší scroll ========
+function smoothScrollTo(element, duration = 600) {
+  const targetY = element.getBoundingClientRect().top + window.pageYOffset;
+  const startY = window.pageYOffset;
+  const distance = targetY - startY;
+  let startTime = null;
+
+  function animation(currentTime) {
+    if (startTime === null) startTime = currentTime;
+    const timeElapsed = currentTime - startTime;
+    const progress = Math.min(timeElapsed / duration, 1);
+
+    const ease = progress < 0.5
+      ? 2 * progress * progress
+      : -1 + (4 - 2 * progress) * progress;
+
+    window.scrollTo(0, startY + distance * ease);
+
+    if (timeElapsed < duration) {
+      requestAnimationFrame(animation);
+    }
+  }
+
+  requestAnimationFrame(animation);
+}
+
+// ======== Toggle obsahu a pauza videa ========
+document.querySelectorAll('.toggle-header').forEach(header => {
+  header.addEventListener("click", function() {
+  const allContents = document.querySelectorAll('.toggle-content');
+  const allHeaders = document.querySelectorAll('.toggle-header');
+  const current = header.nextElementSibling;
+  const infoButton = header.parentElement;
+  const isOpen = current.classList.contains('show');
+
+  // Zavřít ostatní toggle a počkat na jejich transitionend
+  const promises = [];
+  allContents.forEach((content, i) => {
+    if (content !== current && content.classList.contains('show')) {
+      content.classList.remove('show');
+      allHeaders[i].classList.remove('active');
+      const vid = content.querySelector('video');
+      if (vid) vid.pause();
+
+      // animované sbalení
+      content.style.maxHeight = content.scrollHeight + "px"; // nastav aktuální výšku
+      requestAnimationFrame(() => content.style.maxHeight = "0");
+
+      promises.push(new Promise(resolve => {
+        content.addEventListener('transitionend', resolve, { once: true });
+      }));
+    }
+  });
+
+  Promise.all(promises).then(() => {
+    if (isOpen) {
+      // zavření aktuálního toggle
+      current.classList.remove('show');
+      current.style.maxHeight = null;
+      header.classList.remove('active');
+      const vid = current.querySelector('video');
+      if (vid) vid.pause();
+    } else {
+      // otevření aktuálního toggle
+      current.classList.add('show');
+      header.classList.add('active');
+      current.style.maxHeight = current.scrollHeight + "px";
+
+      // scrollovat až po dokončení rozbalení
+      current.addEventListener('transitionend', function handler() {
+        smoothScrollTo(infoButton, 1000);
+        current.removeEventListener('transitionend', handler);
+      });
+    }
+  });
+});
+
+
+// ======== Uzavření otevřeného toggle klikem mimo něj ========
+document.addEventListener('click', function(e) {
+  document.querySelectorAll('.toggle-header.active').forEach(activeHeader => {
+    const content = activeHeader.nextElementSibling;
+    if (!activeHeader.parentElement.contains(e.target)) {
+      content.classList.remove('show');
+      content.style.maxHeight = null;
+      activeHeader.classList.remove('active');
+      const playerDiv = content.querySelector('.custom-video-player');
+      if (playerDiv) {
+        const video = playerDiv.querySelector('video');
+        if (video) video.pause();
+      }
+    }
+  });
 });
 
 
 
+  // ======== SVG ikony ========
+  const svgPlay = `
+    <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+      <path d="M8 5v14l11-7z"></path>
+    </svg>`;
+  const svgPause = `
+    <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+      <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"></path>
+    </svg>`;
+  const svgEnterFs = `
+    <svg class="icon-enterfs" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+      <path d="M4 4h6V2H2v8h2V4zm10-2v2h6v6h2V2h-8zm6 16h-6v2h8v-8h-2v6zm-12 0H4v-6H2v8h8v-2z"/>
+    </svg>`;
+  const svgExitFs = `
+   <svg class="icon-exitfs" width="16px" height="16px" viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg" style="display:none;">
+    <path d="M1 6L6 6L6 1L4.2 1L4.2 4.2L1 4.2L1 6Z"/>
+    <path d="M15 10L10 10L10 15L11.8 15L11.8 11.8L15 11.8L15 10Z"/>
+    <path d="M6 15L6 10L1 10L1 11.8L4.2 11.8L4.2 15L6 15Z"/>
+    <path d="M10 1L10 6L15 6L15 4.2L11.8 4.2L11.8 1L10 1Z"/>
+  </svg>`;
+
+  // ======== Vlastní video přehrávač ========
+  document.querySelectorAll(".custom-video-player").forEach(player=>{
+    const video = player.querySelector("video");
+    const playBtn = player.querySelector(".play-pause");
+    const muteBtn = player.querySelector(".mute-unmute");
+    const fsBtn = player.querySelector(".fullscreen");
+    const progressContainer = player.querySelector(".progress-container");
+    const progressBar = player.querySelector(".progress-bar");
+
+    // Střední play/pause (SVG)
+    const centerPlay = document.createElement("button");
+    centerPlay.className = "center-play";
+    centerPlay.innerHTML = svgPlay;
+    player.appendChild(centerPlay);
+
+    // Mobil overlay
+    const firstTap = document.createElement("button");
+    firstTap.className="vp-firsttap";
+    player.appendChild(firstTap);
+
+    // Safety mobil
+    video.setAttribute("playsinline","");
+    video.muted = video.muted ?? true;
+
+    // Show/Hide controls
+    function showControls(){
+      player.classList.add("show-controls");
+      if(player.controlsTimeout) clearTimeout(player.controlsTimeout);
+      player.controlsTimeout = setTimeout(()=>player.classList.remove("show-controls"),1500);
+    }
+
+    function togglePlay(){
+      if(video.paused) video.play(); else video.pause();
+      updatePlayIcons();
+      showControls();
+    }
+
+    function updatePlayIcons(){
+      centerPlay.innerHTML = video.paused ? svgPlay : svgPause;
+      if(playBtn) playBtn.innerHTML = video.paused ? svgPlay : svgPause;
+    }
+
+    // === INIT icons
+    updatePlayIcons();
+
+    // Click events
+    centerPlay.addEventListener("click", e=>{
+      e.stopPropagation();
+      togglePlay();
+    });
+    video.addEventListener("click", e=>{
+      if(e.target.closest(".controls")) return;
+      togglePlay();
+    });
+    if(playBtn) playBtn.addEventListener("click", e=>{
+      e.stopPropagation();
+      togglePlay();
+    });
+
+    // Mute
+    if(muteBtn) muteBtn.addEventListener("click", e=>{
+      e.stopPropagation();
+      video.muted = !video.muted;
+      const iconUn = muteBtn.querySelector(".icon-unmute");
+      const iconMu = muteBtn.querySelector(".icon-mute");
+      if(video.muted){ iconUn.style.display="none"; iconMu.style.display="block"; }
+      else{ iconUn.style.display="block"; iconMu.style.display="none"; }
+      showControls();
+    });
+
+    // Fullscreen toggle
+    if(fsBtn){
+      fsBtn.innerHTML = svgEnterFs + svgExitFs;
+      fsBtn.addEventListener("click", e=>{
+        e.stopPropagation();
+        if(document.fullscreenElement === player){
+          if(document.exitFullscreen) document.exitFullscreen();
+          else if(document.webkitExitFullscreen) document.webkitExitFullscreen();
+        } else {
+          if(player.requestFullscreen) player.requestFullscreen();
+          else if(player.webkitRequestFullscreen) player.webkitRequestFullscreen();
+        }
+      });
+
+      player.addEventListener("fullscreenchange", ()=>{
+        const iconEnter = fsBtn.querySelector(".icon-enterfs");
+        const iconExit = fsBtn.querySelector(".icon-exitfs");
+        if(document.fullscreenElement === player){
+          iconEnter.style.display="none";
+          iconExit.style.display="block";
+        } else {
+          iconEnter.style.display="block";
+          iconExit.style.display="none";
+        }
+      });
+    }
+
+    // Progress bar update
+    video.addEventListener("timeupdate", ()=>{
+      if(!video.duration) return;
+      progressBar.style.width = (video.currentTime/video.duration*100) + "%";
+    });
+
+    // Seek
+    progressContainer.addEventListener("click", e=>{
+      e.stopPropagation();
+      const rect=progressContainer.getBoundingClientRect();
+      const pct=Math.max(0,Math.min(1,(e.clientX-rect.left)/rect.width));
+      video.currentTime=pct*video.duration;
+      showControls();
+    });
+
+    // Hover/Touch show controls
+    player.addEventListener("mousemove", showControls);
+    player.addEventListener("touchstart", showControls);
+
+    // Autoplay first tap
+    firstTap.addEventListener("pointerdown", e=>{
+      e.preventDefault();
+      video.play().then(()=>firstTap.remove()).catch(()=>{});
+      showControls();
+    },{passive:false, once:true});
+
+    // Center play visibility
+    player.classList.add("show-controls");
+    video.addEventListener("play", ()=>centerPlay.style.opacity=0);
+    video.addEventListener("pause", ()=>centerPlay.style.opacity=1);
+
+  });
+});
+</script>
 
 
 
 
 
- 
- </script>
       
 
 

@@ -1,4 +1,5 @@
-html { box-sizing: border-box; }
+html { box-sizing: border-box; 
+}
 *, ::before, ::after { box-sizing: inherit; }
 
 
@@ -47,13 +48,21 @@ h2 {
  p {
     color: var(--primary-color);
   }
+.highlight {
+color: white;
+  background-color: var(--secondary-color); 
+  padding: 0em 0.3em;    
+  border-radius: 0.4em;  
+ 
+}
+
 
 
 .info-button {
     border-radius: 20px;
     box-shadow: 0 4px 6px 2px rgba(82, 127, 255, 0.15);
     padding: 0px 10px;
-    max-width: 500px;
+    max-width: 450px;
     margin: 10px;
    
 }
@@ -70,13 +79,13 @@ h2 {
     }
 
 #myVideo2 {
-    margin: 0 0 50px 0;
+    margin: 10px 0 50px 0;
 }   
 
 
 .toggle-header {
     cursor: pointer;
-    margin: 10px;
+    margin: 0.6em;
     color: var(--primary-color);
     font-size: 1.2em;
     font-weight: bold;
@@ -86,24 +95,40 @@ h2 {
 
 .toggle-header.active {
     color: var(--secondary-color);
+     margin: 30px 10px 0 10px;
 }
 
 
 /* Skrytí obsahu při výchozím stavu */
 .toggle-content {
-    height: 0; /* Skrytý stav */
-    opacity: 0; /* Skrytí obsahu */
-    overflow: hidden; /* Skrytí přetékajícího obsahu */
-    transform: translateY(-5px); /* Počáteční pozice je 20px nad nadpisem */
-    transition: transform 0.5s ease-out, opacity 0.5s ease-out, height 0s ease; /* Plynulý přechod pro transform, opacity a height */
-    padding: 0; /* Padding pro zobrazený obsah */
-    font-size: 1em;
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(-5px);
+  overflow: hidden;
+  transition:
+    max-height 0.4s ease,
+    opacity 0.3s ease,
+    transform 0.3s ease;
 }
 
+.toggle-content.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.info-button {
+  transition: margin-top 0.3s ease;
+  margin-top: 0;
+}
+
+.info-button.open {
+  margin-top: 50px; /* jediný margin-top pro posun */
+}
 
 
 .toggle-content p {
     margin: 10px;
+  
 }
 
 .web-link {
@@ -144,3 +169,171 @@ footer{
 @media screen and (max-width: 640px) {}
 
 @media screen and (max-width: 960px) {}
+
+
+
+/* 🎨 Custom video player */
+.custom-video-player {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 1.5em auto;
+    background: #000;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* Video */
+.custom-video-player video {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+/* Center play/pause */
+.custom-video-player .center-play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70px;
+    height: 70px;
+    background: rgba(0,0,0,0.3);
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    z-index: 25;
+    transition: opacity 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+/* SVG inside center play */
+.custom-video-player .center-play svg {
+    width: 40px;
+    height: 40px;
+}
+
+/* Controls container - spodní lišta */
+.custom-video-player .controls {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(0,0,0,0.3);
+    box-sizing: border-box;
+    transition: opacity 0.3s;
+    z-index: 20;
+    opacity: 0; /* skryté při startu */
+    pointer-events: auto;
+}
+
+/* Controls se zobrazí při show-controls */
+.custom-video-player.show-controls .controls {
+    opacity: 1;
+}
+
+/* Buttons */
+.custom-video-player .controls button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+}
+
+.custom-video-player .controls button svg {
+    width: 28px;
+    height: 28px;
+    fill: white;
+}
+
+.custom-video-player .controls button:hover svg {
+    fill: #ddd;
+}
+
+/* Progress bar */
+.custom-video-player .progress-container {
+    flex: 1;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.3);
+    margin: 0 10px;
+    border-radius: 3px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.custom-video-player .progress-bar {
+    height: 100%;
+    width: 0;
+    background: #fff;
+    transition: width 0.1s linear;
+}
+
+/* Mute / Fullscreen buttons */
+.custom-video-player .mute-unmute,
+.custom-video-player .fullscreen {
+    font-size: 18px;
+    color: #fff;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+/* Fullscreen aktivní - pouze nativní fullscreen */
+.custom-video-player:fullscreen,
+.custom-video-player:-webkit-full-screen {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+}
+
+.custom-video-player:fullscreen video,
+.custom-video-player:-webkit-full-screen video {
+    width: auto;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Mobilní overlay první tap */
+.vp-firsttap {
+    position: absolute;
+    inset: 0;
+    background: transparent;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    z-index: 15;
+    touch-action: manipulation;
+}
+
+/* Fullscreen icon */
+.icon-enterfs::before {
+    content: "⛶";
+    color: white;
+    font-family: sans-serif;
+}
+
+.video-poster-visible {
+  display: block; /* video je viditelné */
+}
+
+.custom-video-player video:not(.playing) {
+  object-fit: contain; /* poster se zobrazí správně */
+}
