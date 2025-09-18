@@ -44,7 +44,7 @@
                         <source src="321_START_video_1.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
-                    <div class="loader">⏳</div>
+                    <div class="loader"></div>
                     <div class="controls">
                         <button class="play-pause"> 
                             <!-- Ikona pro Play -->
@@ -97,7 +97,7 @@
                         <source src="321_START_video_2.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
-                   <div class="loader">⏳</div>
+                   <div class="loader"></div>
 
                     <div class="controls">
                         <button class="play-pause">▶</button>
@@ -138,7 +138,7 @@
                         <source src="321_START_video_3.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
-                    <div class="loader">⏳</div>
+                    <div class="loader"></div>
 
                     <div class="controls">
 
@@ -473,20 +473,18 @@ video.addEventListener("pause", updatePlayIcons);
     });
 
     // Load videa 
-   document.querySelectorAll(".custom-video-player").forEach(wrapper => {
+  document.querySelectorAll(".custom-video-player").forEach(wrapper => {
   const video = wrapper.querySelector("video");
   const loader = wrapper.querySelector(".loader");
 
-  // zobraz loader při bufferování
-  video.addEventListener("waiting", () => loader.style.display = "flex");
-  // schovej loader, když video může hrát
-  video.addEventListener("playing", () => loader.style.display = "none");
-  video.addEventListener("canplay", () => loader.style.display = "none");
+  // při načítání ukážeme poster v loaderu
+  loader.style.backgroundImage = `url(${video.getAttribute("poster")})`;
 
-  // po skončení video vrátit na začátek a zobrazit poster
-  video.addEventListener("ended", () => {
-    video.load();
-  });
+  video.addEventListener("waiting", () => loader.classList.add("show"));
+  video.addEventListener("playing", () => loader.classList.remove("show"));
+  video.addEventListener("canplay", () => loader.classList.remove("show"));
+
+  video.addEventListener("ended", () => video.load()); // poster po skončení
 });
 
 

@@ -190,23 +190,18 @@ footer{
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 2rem;
-  color: white;
-  background: rgba(0,0,0,0.4);
-  z-index: 2;
-  display: none; /* defaultně skryté */
+  background-size: cover;
+  background-position: center;
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
 }
 
-/* Loader overlay */
-.loader {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: rgba(0,0,0,0.4);
-  z-index: 2;
-  display: none; /* defaultně schovaný */
+
+.loader.show {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 /* Točící se kolečko */
