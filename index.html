@@ -44,6 +44,7 @@
                         <source src="321_START_video_1.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
+                    <div class="loader">⏳</div>
                     <div class="controls">
                         <button class="play-pause"> 
                             <!-- Ikona pro Play -->
@@ -80,9 +81,7 @@
                     <p>Využij speciální příležitost navštívit moderní a exotický Taiwan.
                         Neztrácej čas, začni budovat svoji hvězdnou kariéru v modelingu s pomocí těch nejlepších profesionálů.</p>
 
-                    <p>Exkluzivní spolupráce scoutingové společnosti PMST Praha a modelingové agentury NEW FACE Taipei vyústila v roce 2025 ke vzniku tohoto projektu. 
-                        Nyní každý rok získají skvělou šanci nastartovat svoji hvězdnou kariéru 3 dívky a 1 kluk.
-                        Jedinečný projekt 2 zemí, České republiky a Taiwanu, právě startuje.</p>
+                
                 </div>
         </div>
 
@@ -98,6 +97,8 @@
                         <source src="321_START_video_2.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
+                   <div class="loader">⏳</div>
+
                     <div class="controls">
                         <button class="play-pause">▶</button>
                         <div class="progress-container"><div class="progress-bar"></div></div>
@@ -137,6 +138,8 @@
                         <source src="321_START_video_3.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
+                    <div class="loader">⏳</div>
+
                     <div class="controls">
 
                         <button class="play-pause">▶</button>
@@ -463,6 +466,30 @@ video.addEventListener("pause", updatePlayIcons);
       video.play().then(()=>firstTap.remove()).catch(()=>{});
       showControls();
     },{passive:false, once:true});
+
+    // Konec videa - zpět na začátek
+    video.addEventListener("ended", () => {
+      video.load(); // skočí zpět na začátek a zobrazí poster
+    });
+
+    // Load videa 
+   document.querySelectorAll(".custom-video-player").forEach(wrapper => {
+  const video = wrapper.querySelector("video");
+  const loader = wrapper.querySelector(".loader");
+
+  // zobraz loader při bufferování
+  video.addEventListener("waiting", () => loader.style.display = "flex");
+  // schovej loader, když video může hrát
+  video.addEventListener("playing", () => loader.style.display = "none");
+  video.addEventListener("canplay", () => loader.style.display = "none");
+
+  // po skončení video vrátit na začátek a zobrazit poster
+  video.addEventListener("ended", () => {
+    video.load();
+  });
+});
+
+
 
 
   });
