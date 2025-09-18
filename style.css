@@ -204,7 +204,7 @@ footer{
   pointer-events: auto;
 }
 
-/* Točící se kolečko */
+/* Točící se kolečkoc- spinner */
 .loader::after {
   content: "";
   width: 40px;
@@ -219,6 +219,16 @@ footer{
   to {
     transform: rotate(360deg);
   }
+}
+
+/* Overlay po skončení videa */
+.video-end-overlay {
+  position: absolute;
+  inset: 0;
+  background: #fff; /* nebo poster jako background-image */
+  z-index: 10;
+  display: none;
+  pointer-events: none;
 }
 
 /* Video */

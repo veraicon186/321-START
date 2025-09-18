@@ -45,6 +45,8 @@
                         Your browser does not support the video tag.
                     </video>
                     <div class="loader"></div>
+                    <div class="video-end-overlay"></div>
+
                     <div class="controls">
                         <button class="play-pause"> 
                             <!-- Ikona pro Play -->
@@ -98,6 +100,7 @@
                         Your browser does not support the video tag.
                     </video>
                    <div class="loader"></div>
+                    <div class="video-end-overlay"></div>
 
                     <div class="controls">
                         <button class="play-pause">▶</button>
@@ -139,6 +142,7 @@
                         Your browser does not support the video tag.
                     </video>
                     <div class="loader"></div>
+                     <div class="video-end-overlay"></div>
 
                     <div class="controls">
 
@@ -472,20 +476,31 @@ video.addEventListener("pause", updatePlayIcons);
       video.load(); // skočí zpět na začátek a zobrazí poster
     });
 
-    // Load videa 
-  document.querySelectorAll(".custom-video-player").forEach(wrapper => {
+document.querySelectorAll(".custom-video-player").forEach(wrapper => {
   const video = wrapper.querySelector("video");
   const loader = wrapper.querySelector(".loader");
+  const overlay = wrapper.querySelector(".video-end-overlay");
 
-  // při načítání ukážeme poster v loaderu
+  // nastavíme loader s posterem videa
   loader.style.backgroundImage = `url(${video.getAttribute("poster")})`;
 
+  // Loader při načítání
   video.addEventListener("waiting", () => loader.classList.add("show"));
   video.addEventListener("playing", () => loader.classList.remove("show"));
   video.addEventListener("canplay", () => loader.classList.remove("show"));
 
-  video.addEventListener("ended", () => video.load()); // poster po skončení
-});
+  // Po skončení videa → overlay
+  video.addEventListener("ended", () => {
+    overlay.style.backgroundImage = `url(${video.getAttribute("poster")})`; // nebo #fff
+    overlay.style.display = "block";
+  });
+
+  // Při znovu-spuštění videa → overlay pryč, jen až když je video připravené
+  video.addEventListener("play", () => {
+    video.addEventListener("canplay", () => {
+      overlay.style.display = "none";
+    }, { once: true });
+  });
 
 
 
