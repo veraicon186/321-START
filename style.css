@@ -181,6 +181,7 @@ footer{
     background: #000;
     border-radius: 12px;
     overflow: hidden;
+    aspect-ratio: 9 / 16;
 }
 
 /* Načítání videa */
